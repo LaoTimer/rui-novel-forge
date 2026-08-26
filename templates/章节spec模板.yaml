@@ -1,0 +1,76 @@
+# 章节 Spec 模板（12 字段）
+# 用法：复制本文件，改名 规格/第XXX章.yaml，按注释填空。详见 references/08_chapter_spec.md
+chapter:
+  num: 0
+  title: "第 0 章 章节名"
+  summary: "200 字以内本章摘要"
+  word_target: "5000-7000"
+  type_focus: "本章节拍类型"
+
+before_state:
+  characters:
+    - name: "角色名"
+      state: "状态"
+      location: "位置"
+      emotion: "情绪"
+      known_info: ["目前已知的信息（只增不减）"]
+      relationship_to_others: "对其他角色态度"
+      heart_triggered: "本章触动心脏哪层"
+  plot_hooks: ["未回收伏笔"]
+  time: "时间"
+  weather: "天气"
+
+after_state:
+  characters:
+    - name: "角色名"
+      state: "新状态"
+      location: "新位置"
+      emotion: "情绪变化方向"
+      new_known: ["本章新增已知信息"]
+      relationship_changes: ["关系变化"]
+      heart_shift: "欲望推进/恐惧触发/伤口触碰"
+  plot_advances: ["伏笔回收", "新伏笔埋下"]
+
+must_happen:
+  - event: "关键事件"
+    prerequisites: ["前置条件"]
+    causes: "前文哪件事直接导致"
+    consequences: "触发下一章什么"
+
+narrative_density: "中"   # 高/中/低
+tension_curve:
+  - {position: 0, value: 3, note: "铺垫"}
+  - {position: 50, value: 8, note: "高潮"}
+  - {position: 100, value: 5, note: "收尾"}
+
+hook_type: "问题钩"        # 问题钩/危机钩/秘密钩/伏笔钩/反转钩
+hook_layer: "信息钩"       # 信息钩/情绪钩/认知钩
+hook_strength: "中"        # 强/中/弱
+hook_rhythm_note: "大钩子章"  # 中等钩子章/大钩子章/缓冲章
+
+core_conflict:
+  type: "主角 >< 反派"      # 主角vs反派/配角/环境/自己
+  description: "冲突描述"
+  resolution: "本章结果"
+
+conflict_markers:
+  - {position: 10, type: "IN", intensity: 2, note: "内心冲突"}
+  - {position: 50, type: "IR", intensity: 4, note: "人际冲突"}
+
+function_annotations:
+  emotion: ["压抑", "爆发"]
+  conflict: ["IR:4"]
+  rhythm: "中-快"
+  info: "揭示"             # 揭示/隐藏/暗示
+  structure: "转折"         # 伏笔/回收/转折/过渡
+  voice_anchor: "ANCHOR_01"
+
+voice_constraints:
+  - character: "主角"
+    speech_style: "短句/口语"
+    forbidden_words: ["禁止词"]
+    behavior_ticks: ["习惯性小动作"]
+
+foreshadowing:
+  recovered: ["第 X 章伏笔，本章回收"]
+  new_planted: ["本章新埋伏笔，预计第 Y 章回收"]
