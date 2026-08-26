@@ -1,0 +1,69 @@
+# 人物卡模板
+# 用法：复制本文件，改名 设定/人物/角色名.yaml。详见 references/05_characters.md
+character:
+  name: 角色名
+  # ── L1 简历层（外在）──
+  age: 0
+  gender: 男/女
+  identity: "身份一句话"
+  appearance: "外貌一句话"
+  occupation: "职业/轨迹"
+  background: "背景一句话"
+  social_status: "社会地位"
+
+  # ── L2 心脏层（内在，必填）──
+  desires:
+    surface: "口头上想要什么"
+    real: "真正驱动他的"
+    satisfaction: "得到了会满足吗？为什么"
+  fears:
+    expose: "最怕暴露哪一面"
+    triggers: "什么处境触发逃跑/反击"
+    becoming: "最怕变成谁"
+  wounds:
+    moment: "哪个时刻让他从此不同"
+    habits: "留下什么行为习惯"
+  contradictions:
+    self_contradiction: "连自己都说不清的矛盾"
+    surprise: "何时做出自己也意外的决定"
+
+  # ── L3 声音层（表达）──
+  voice_fingerprint:
+    vocabulary_used:
+      high_freq: ["高频词1", "高频词2"]
+      mid_freq: ["中频词"]
+      low_freq: ["不轻易说的词"]
+    verbs:
+      high_freq: ["握", "斩"]
+      forbidden: ["不符合性格的动词"]
+    modifiers:
+      sentence_length: "短-中（10-20字）"
+      opening_phrases: ["我曾……"]
+      catchphrases: ["……又如何"]
+      ending_phrases: ["……罢了"]
+    forbidden_words: ["严重不符合世界观的词"]
+
+  # ── 弧光七步 ──
+  arc:
+    start: "起点：相信什么"
+    wound: "伤口：什么动摇了信念"
+    try: "试错：怎么恢复旧信念"
+    fail: "失败：为什么旧信念不行"
+    realize: "中点转折：意识到什么"
+    become: "行动：用新信念怎么做"
+    end: "终点：变成什么样"
+
+  # ── 不可漂移项（一致性硬约束，详见 references/15_continuity.md）──
+  fixed:
+    appearance: "固定外貌（不可变）"
+    core_ability: "核心能力（不可变）"
+    scars: ["固定伤痕"]
+    verbal_ticks: ["固定行为 tick"]
+
+  # ── 关系网 ──
+  relationships:
+    - char_b: "对方名"
+      type: "血缘/情感/利益/权力/暧昧"
+      current_state: "当前状态"
+      development: ["初识", "并肩", "误会", "…"]
+      tension: "高/中/低"
