@@ -1,0 +1,31 @@
+# 伏笔总表模板
+# 用法：复制本文件，改名 设定/伏笔.yaml。引擎 continuity_check.py 会自动读取并巡检。
+# 详见 references/15_continuity.md
+foreshadowing_ledger:
+  - id: FS-001
+    type: 物件            # 物件/人物/信息/设定/主题
+    plant_text: "他从怀中摸出一枚古旧玉佩"
+    plant_chapter: 10
+    expected_recover: 80   # 预计回收章节
+    actual_recover: null   # 实际回收章节；null = 未回收
+    recover_text: ""       # 回收时的文本/说明
+    status: 活跃           # 活跃 / 已回收 / 误导（红鲱鱼）
+
+  - id: FS-002
+    type: 信息
+    plant_text: "那个人的眼神，他总觉得在哪见过"
+    plant_chapter: 23
+    expected_recover: 50
+    actual_recover: 50
+    recover_text: "原来那是他孪生兄长"
+    status: 已回收
+
+  # 红鲱鱼（假伏笔，故意埋但不回收，用来误导）
+  - id: FS-003
+    type: 设定
+    plant_text: "北境的钟声每隔三年响一次"
+    plant_chapter: 15
+    expected_recover: null
+    actual_recover: null
+    recover_text: ""
+    status: 误导
