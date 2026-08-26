@@ -1,0 +1,46 @@
+# 多线平行时间轴模板（多线编织法 · 实操）
+# 用法：横轴 = 时间，纵轴 = 各线索。每章 / 每关键节点填一格。
+# 目的：跨线时钟对齐 + 跨线状态一致 + 漏斗汇聚可视。
+# 触发：config.multiline_mode: true
+# 详见 references/16_multiline_weave.md §六
+
+meta:
+  project: "我的小说"
+  mode: "章节"            # 章节 / 日期（长线用日期，单卷用章节）
+  funnel_stage: "开口期"  # 开口期 / 碰撞期 / 缩视角期 / 收网期
+
+# 时间横轴（按 mode 填：章节号 或 YYYY-MM-DD）
+timeline_axis:
+  - T1   # 例如：第1章 或 1937-09-01
+  - T2
+  - T3
+  # ... 按需增
+
+# 各线索纵轴（每条线一个 key）
+lines:
+  主角线:
+    T1: { event: "边境拼杀", char_state: "伤愈复出", known: ["暴君弱点初现"] }
+    T2: { event: "攻下隘口", char_state: "升迁", known: ["内应密信"] }
+    T3: { event: "密室门推开", char_state: "震惊", known: ["身世真相"] }
+  反派线:
+    T1: { event: "内部权力斗争", char_state: "稳固", known: ["主角存在"] }
+    T2: { event: "赶路赴客栈", char_state: "设伏", known: ["主角路线"] }
+    T3: { event: "埋伏启动", char_state: "自信", known: ["主角将至"] }
+  小人物线:
+    T1: { event: "战火流离", char_state: "绝望", known: [] }
+    T2: { event: "躲入地窖", char_state: "苟活", known: [] }
+    T3: { event: "被迫抉择", char_state: "觉醒", known: ["两支军队将至"] }
+
+# 跨线一致性自检（写时 / 体检时查）
+consistency_check:
+  - "A 线时钟 vs B 线时钟是否对齐？（避免 A 过3天 B 过1小时）"
+  - "角色跨线状态是否一致？（避免 A 线重伤 B 线活蹦乱跳）"
+  - "各线 known 是否只增不减、无穿帮？（接 15_continuity known_info）"
+
+# 漏斗汇聚标记（后期填）
+funnel:
+  converge_event: "最终大决战"        # 所有线指向的同一事件
+  pov_shrink_at: "第 N 章起缩视角"    # 主动缩减 POV 的节点
+  simultaneous_detonate:              # 终局同爆的长线伏笔
+    - "FS-001"
+    - "FS-007"
